@@ -5,8 +5,10 @@
 */
 
 //Code here
-
-
+let me = {
+  name: "Harry",
+  age: 23,
+};
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
@@ -16,22 +18,24 @@
 //and goodBoy/goodGirl (a boolean).
 
 //Code here
-
-
+let dog = {
+  name: 'Chewy',
+  color: 'brown',
+  age: 3,
+  goodBoy = true
+};
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
-
+console.log(dog.name)
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
-
-
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -40,6 +44,14 @@
 */
 
 //Code here
+let favoriteThings = {
+  band: 'RHCP',
+  food: 'sushi',
+  person: 'My girlfriend, Sophie',
+  book: 'The Great Gatsby',
+  movie: 'Star Wars Episode III: Revenege of The Sith',
+  holiday: 'Thanksgiving'
+};
 
 
 /*
@@ -47,14 +59,16 @@
 */
 
 //Code here
-
-
+favoriteThings.car = 'BMW E30'
+favoriteThings.show = 'Curb Your Enthusiasm'
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
 //Code here
+favoriteThings.food = 'Chicken nuggets'
+favoriteThings.book = 'Harry Potter'
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -73,7 +87,10 @@ var carDetails = {
 */
 
 //Code Here
-
+let carColor = carDetails.color
+let carMake = carDetails.make
+let carModel = carDetails.model
+let carYear = carDetails.year
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -86,8 +103,11 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
+  obj.firstName = 'Harrison'
+  obj.lastName = 'Kleiman'
+  obj.title = 'Mr'
   
-  // Do not edit the code below.
+// Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
@@ -105,6 +125,18 @@ function greeting( obj ) {
 */
 
 //Code Here
+const totalPopulation = (obj) => {
+  let obj = {}
+  obj.utah = 400000
+  obj.california = 1000000
+  obj.texas = 500000
+  obj.arizona = 300000
+    let sumVals = 0;
+    for (let key in obj) {
+      sumVals += obj[key]
+    }
+    return sumVals
+  } 
 
 
 
@@ -119,8 +151,16 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
+const ingredients = (obj) => {
+  let obj = {}
+  for (let key in obj) {
+    let arr= []
+    if (obj.hasOwnProperty(key)) {
+      arr.push(obj[key])
+    }
+  }
+  return arr;
+}
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
 // Do not edit the code below.
@@ -141,7 +181,9 @@ var user = {
 */
 
 //Code Here
-
+let changeUser = user
+changeUser.name = 'Bryan G. Smith'
+changeUser.email = 'bryan.smith@devmounta.in'
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -149,7 +191,7 @@ var user = {
 */
 
 //Code Here
-
+delete user.age
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -159,7 +201,16 @@ var user = {
 */
 
 //Code here
+class Cat {
+  constructor(name, age, color) {
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
 
+const cat = new Cat('Sue', 2, grey)
+console.log(cat.name) // 'Sue'
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -171,7 +222,18 @@ var user = {
 */
 
 //Code here
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+    const catSpell = () => {
+      return `${name} has cast ${favoriteSpell}.`
+    }
+  }
+}
 
+const wizard = new Wizard('Ron', 11, 'Wingardium LeviOHsaaaaa')
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -196,7 +258,20 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructior(brand, model, storage, color, price, soldProperties) {
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.soldProperties = false
+  }
+  get sell() {
+    this.soldProperties = true
+    return `${brand} ${model} has been sold`
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -246,8 +321,8 @@ const colors = {
 //do not edit this object
 
 //Code Here 
-
-
+let colorsCopy = [...colors]
+// console.log(colorsCopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
